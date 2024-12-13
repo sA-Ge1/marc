@@ -5,9 +5,9 @@ moveit_setup_assistant_config:
   srdf:
     relative_path: config/marc.srdf
   package_settings:
-    author_name: aditya_karumbaiah
-    author_email: adityakarumbaiah@gmail.com
-    generated_timestamp: 1733926287
+    author_name: ad
+    author_email: ad@gmail.com
+    generated_timestamp: 1734082116
   control_xacro:
     command:
       - position
