@@ -15,7 +15,7 @@ class ArmController(Node):
             10)
         
         # Initialize serial communication (adjust port and baudrate as necessary)
-        self.serial_port = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)  # Update port based on your setup
+        self.serial_port = serial.Serial('/dev/ttyUSB1', 115200, timeout=1)  # Update port based on your setup
         time.sleep(2)  # Give the serial connection time to initialize
         
         # Last sent positions for each joint, initialized to None

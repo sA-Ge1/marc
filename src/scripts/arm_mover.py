@@ -5,12 +5,17 @@ from rclpy.callback_groups import ReentrantCallbackGroup
 from rclpy.node import Node
 from pymoveit2 import MoveIt2, MoveIt2State
 from pymoveit2.robots import marc as robot
-
+from scipy.spatial.transform import Rotation as R
+#home 0.024,0.0,0.111 quat=0,0,0,1
 def main():
     rclpy.init()
-    node = Node("ex_pose_goal")
-    node.declare_parameter("position", [0.10, 0.0, 0.0])
-    node.declare_parameter("quat_xyzw", [0.0, 0.0, 0.0, 1.0])
+    node = Node("arm_pose_goal")
+    node.declare_parameter("position", [0.10, 0.0, 0.111])
+    # Specify the desired orientation in roll, pitch, yaw (in radians)
+    roll, pitch, yaw = 0.00, 0.0, 0.0
+    r = R.from_euler('xyz', [roll, pitch, yaw])
+    quaternion = r.as_quat()  # Returns [x, y, z, w]
+    node.declare_parameter("quat_xyzw", quaternion.tolist())
     node.declare_parameter("synchronous", True)
     # If non-positive, don't cancel. Only used if synchronous is False
     node.declare_parameter("cancel_after_secs", 0.0)
@@ -28,21 +33,13 @@ def main():
 
     # Create MoveIt 2 interface
     moveit2 = MoveIt2(
-    node=node,
-    joint_names=[
-        "shoulder_joint",
-        "upper_arm_joint",
-        "elbow_joint",
-        "wrist_joint",
-        "ee_rotation_joint_x",
-        "ee_rotation_joint_y",
-        "ee_rotation_joint_z"
-    ],
-    base_link_name="base_link",
-    end_effector_name="robot_ee",
-    group_name="arm",
-    callback_group=callback_group,
-)
+        node=node,
+        joint_names=robot.joint_names(),
+        base_link_name=robot.base_link_name(),
+        end_effector_name=robot.end_effector_name(),
+        group_name=robot.MOVE_GROUP_ARM,
+        callback_group=callback_group,
+    )
 
     moveit2.planner_id = (
         node.get_parameter("planner_id").get_parameter_value().string_value
@@ -56,8 +53,8 @@ def main():
     node.create_rate(1.0).sleep()
 
     # Scale down velocity and acceleration of joints (percentage of maximum)
-    moveit2.max_velocity = 0.5
-    moveit2.max_acceleration = 0.5
+    moveit2.max_velocity = 1.0
+    moveit2.max_acceleration = 1.0
 
     # Get parameters
     position = node.get_parameter("position").get_parameter_value().double_array_value
