@@ -1,0 +1,41 @@
+[0.016s] Invoking command in '/home/batman/marc/build/arm_config': CFLAGS=-I/usr/local/cuda-12.4/include CMAKE_PREFIX_PATH=/home/batman/marc/install/marc:/home/batman/marc/install/yconfig:/home/batman/marc/install/arm_config:/home/batman/Desktop/ROS2/microros_ws/install/micro_ros_setup:/home/batman/Desktop/ROS2/microros_ws/install/micro_ros_agent:/home/batman/Desktop/ROS2/microros_ws/install/micro_ros_msgs:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_ros2:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_wrapper:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_components:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_interfaces:/opt/ros/humble /usr/bin/cmake --build /home/batman/marc/build/arm_config -- -j16 -l16
+[0.074s] Invoked command in '/home/batman/marc/build/arm_config' returned '0': CFLAGS=-I/usr/local/cuda-12.4/include CMAKE_PREFIX_PATH=/home/batman/marc/install/marc:/home/batman/marc/install/yconfig:/home/batman/marc/install/arm_config:/home/batman/Desktop/ROS2/microros_ws/install/micro_ros_setup:/home/batman/Desktop/ROS2/microros_ws/install/micro_ros_agent:/home/batman/Desktop/ROS2/microros_ws/install/micro_ros_msgs:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_ros2:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_wrapper:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_components:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_interfaces:/opt/ros/humble /usr/bin/cmake --build /home/batman/marc/build/arm_config -- -j16 -l16
+[0.077s] Invoking command in '/home/batman/marc/build/arm_config': CFLAGS=-I/usr/local/cuda-12.4/include CMAKE_PREFIX_PATH=/home/batman/marc/install/marc:/home/batman/marc/install/yconfig:/home/batman/marc/install/arm_config:/home/batman/Desktop/ROS2/microros_ws/install/micro_ros_setup:/home/batman/Desktop/ROS2/microros_ws/install/micro_ros_agent:/home/batman/Desktop/ROS2/microros_ws/install/micro_ros_msgs:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_ros2:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_wrapper:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_components:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_interfaces:/opt/ros/humble /usr/bin/cmake --install /home/batman/marc/build/arm_config
+[0.086s] -- Install configuration: ""
+[0.086s] -- Up-to-date: /home/batman/marc/install/arm_config/share/ament_index/resource_index/package_run_dependencies/arm_config
+[0.086s] -- Up-to-date: /home/batman/marc/install/arm_config/share/ament_index/resource_index/parent_prefix_path/arm_config
+[0.086s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/environment/ament_prefix_path.sh
+[0.087s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/environment/ament_prefix_path.dsv
+[0.087s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/environment/path.sh
+[0.087s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/environment/path.dsv
+[0.087s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/local_setup.bash
+[0.087s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/local_setup.sh
+[0.087s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/local_setup.zsh
+[0.087s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/local_setup.dsv
+[0.088s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/package.dsv
+[0.088s] -- Up-to-date: /home/batman/marc/install/arm_config/share/ament_index/resource_index/packages/arm_config
+[0.088s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/cmake/arm_configConfig.cmake
+[0.088s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/cmake/arm_configConfig-version.cmake
+[0.088s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/package.xml
+[0.088s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/launch
+[0.088s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/launch/moveit_rviz.launch.py
+[0.089s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/launch/move_group.launch.py
+[0.089s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/launch/warehouse_db.launch.py
+[0.089s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/launch/static_virtual_joint_tfs.launch.py
+[0.089s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/launch/setup_assistant.launch.py
+[0.090s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/launch/spawn_controllers.launch.py
+[0.090s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/launch/rsp.launch.py
+[0.090s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/launch/demo.launch.py
+[0.090s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/config
+[0.090s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/config/marc.urdf.xacro
+[0.090s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/config/moveit.rviz
+[0.090s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/config/ros2_controllers.yaml
+[0.090s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/config/moveit_controllers.yaml
+[0.090s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/config/kinematics.yaml
+[0.090s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/config/initial_positions.yaml
+[0.090s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/config/pilz_cartesian_limits.yaml
+[0.090s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/config/joint_limits.yaml
+[0.090s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/config/marc.srdf
+[0.090s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/config/marc.ros2_control.xacro
+[0.091s] -- Up-to-date: /home/batman/marc/install/arm_config/share/arm_config/.setup_assistant
+[0.092s] Invoked command in '/home/batman/marc/build/arm_config' returned '0': CFLAGS=-I/usr/local/cuda-12.4/include CMAKE_PREFIX_PATH=/home/batman/marc/install/marc:/home/batman/marc/install/yconfig:/home/batman/marc/install/arm_config:/home/batman/Desktop/ROS2/microros_ws/install/micro_ros_setup:/home/batman/Desktop/ROS2/microros_ws/install/micro_ros_agent:/home/batman/Desktop/ROS2/microros_ws/install/micro_ros_msgs:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_ros2:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_wrapper:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_components:/home/batman/Desktop/ROS2/ros2_astra_ws/install/zed_interfaces:/opt/ros/humble /usr/bin/cmake --install /home/batman/marc/build/arm_config
