@@ -22,6 +22,13 @@ install(
   DESTINATION share/${PROJECT_NAME}/launch
 )
 
+install(
+  PROGRAMS
+   src/detector_click.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+
 # Export package
 ament_package()
 

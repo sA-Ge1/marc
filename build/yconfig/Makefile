@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sage/marc_ws/src/yconfig
+CMAKE_SOURCE_DIR = /home/batman/marc/src/yconfig
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sage/marc_ws/build/yconfig
+CMAKE_BINARY_DIR = /home/batman/marc/build/yconfig
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sage/marc_ws/build/yconfig/CMakeFiles /home/sage/marc_ws/build/yconfig//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/batman/marc/build/yconfig/CMakeFiles /home/batman/marc/build/yconfig//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sage/marc_ws/build/yconfig/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/batman/marc/build/yconfig/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

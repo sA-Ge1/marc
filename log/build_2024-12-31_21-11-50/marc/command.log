@@ -1,0 +1,6 @@
+Invoking command in '/home/batman/marc/build/marc': CFLAGS=-I/usr/local/cuda-12.4/include CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/batman/marc/src/marc -DCMAKE_INSTALL_PREFIX=/home/batman/marc/install/marc
+Invoked command in '/home/batman/marc/build/marc' returned '0': CFLAGS=-I/usr/local/cuda-12.4/include CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/batman/marc/src/marc -DCMAKE_INSTALL_PREFIX=/home/batman/marc/install/marc
+Invoking command in '/home/batman/marc/build/marc': CFLAGS=-I/usr/local/cuda-12.4/include CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/batman/marc/build/marc -- -j16 -l16
+Invoked command in '/home/batman/marc/build/marc' returned '0': CFLAGS=-I/usr/local/cuda-12.4/include CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/batman/marc/build/marc -- -j16 -l16
+Invoking command in '/home/batman/marc/build/marc': CFLAGS=-I/usr/local/cuda-12.4/include CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/batman/marc/build/marc
+Invoked command in '/home/batman/marc/build/marc' returned '0': CFLAGS=-I/usr/local/cuda-12.4/include CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/batman/marc/build/marc
