@@ -16,7 +16,7 @@ class Detector(Node):
         super().__init__('detector_click_node')
         
         # Add publisher
-        self.click_pub = self.create_publisher(Point, 'mouse_click_coordinates', 10)
+        self.click_pub = self.create_publisher(Point, 'click_coords', 10)
         
         self.map_width = 30
         self.map_height = 18
