@@ -13,13 +13,12 @@ def main():
 
     # Define waypoints as a list of [position, orientation] pairs
     waypoints = [
-        # position [x, y, z], euler angles [roll, pitch, yaw]
-        ([0.08, 0.0, 0.00], [0.0, 1.57, 0.0]),
-        ([0.14, 0.00, 0.0], [0.0, 1.57, 0.0]),
+       #quad
+        ([0.09, 0.05, 0.00], [0.0, 1.57, 0.0]),
+        ([0.14, 0.05 ,0.0], [0.0, 1.57, 0.0]),
         ([0.14, -0.05, 0.0], [0.0, 1.57, 0.0]),
-        ([0.08, -0.05, 0.00], [0.0, 1.57, 0.0]),
-        ([0.08, 0.0, 0.00], [0.0, 1.57, 0.0])
-        # Add more waypoints as needed
+        ([0.09, -0.05, 0.00], [0.0, 1.57, 0.0]),
+        ([0.09, 0.05, 0.00], [0.0, 1.57, 0.0])
     ]
 
     # Convert euler angles to quaternions for each waypoint
@@ -89,23 +88,12 @@ def main():
             cartesian_max_step=cartesian_max_step,
             cartesian_fraction_threshold=cartesian_fraction_threshold,
         )
+        moveit2.wait_until_executed()
+        
+        node.get_logger().info(f"Completed waypoint {i+1}/{len(waypoints_quat)}")
+        node.create_rate(2.0).sleep()  # 0.5 second pause
 
-        if synchronous:
-            moveit2.wait_until_executed()
-        else:
-            # Wait for the motion to start
-            rate = node.create_rate(10)
-            while moveit2.query_state() != MoveIt2State.EXECUTING:
-                rate.sleep()
-
-            # Get and wait for the future
-            future = moveit2.get_execution_future()
-            while not future.done():
-                rate.sleep()
-
-            print(f"Waypoint {i+1} result status: {str(future.result().status)}")
-            print(f"Waypoint {i+1} error code: {str(future.result().result.error_code)}")
-
+    node.get_logger().info("All waypoints completed")
     rclpy.shutdown()
     executor_thread.join()
     exit(0)

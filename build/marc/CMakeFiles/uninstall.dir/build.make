@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/batman/marc/src/marc
+CMAKE_SOURCE_DIR = /home/sage/marc_ws/src/marc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/batman/marc/build/marc
+CMAKE_BINARY_DIR = /home/sage/marc_ws/build/marc
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/batman/marc/build/marc && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/batman/marc/src/marc /home/batman/marc/src/marc /home/batman/marc/build/marc /home/batman/marc/build/marc /home/batman/marc/build/marc/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sage/marc_ws/build/marc && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sage/marc_ws/src/marc /home/sage/marc_ws/src/marc /home/sage/marc_ws/build/marc /home/sage/marc_ws/build/marc /home/sage/marc_ws/build/marc/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

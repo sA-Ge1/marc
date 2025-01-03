@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/batman/marc/src/arm_config
+CMAKE_SOURCE_DIR = /home/sage/marc_ws/src/arm_config
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/batman/marc/build/arm_config
+CMAKE_BINARY_DIR = /home/sage/marc_ws/build/arm_config
 
 # Utility rule file for arm_config_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/arm_config_uninstall.dir/compiler_depend.make
 include CMakeFiles/arm_config_uninstall.dir/progress.make
 
 CMakeFiles/arm_config_uninstall:
-	/usr/bin/cmake -P /home/batman/marc/build/arm_config/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/sage/marc_ws/build/arm_config/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 arm_config_uninstall: CMakeFiles/arm_config_uninstall
 arm_config_uninstall: CMakeFiles/arm_config_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/arm_config_uninstall.dir/clean:
 .PHONY : CMakeFiles/arm_config_uninstall.dir/clean
 
 CMakeFiles/arm_config_uninstall.dir/depend:
-	cd /home/batman/marc/build/arm_config && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/batman/marc/src/arm_config /home/batman/marc/src/arm_config /home/batman/marc/build/arm_config /home/batman/marc/build/arm_config /home/batman/marc/build/arm_config/CMakeFiles/arm_config_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sage/marc_ws/build/arm_config && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sage/marc_ws/src/arm_config /home/sage/marc_ws/src/arm_config /home/sage/marc_ws/build/arm_config /home/sage/marc_ws/build/arm_config /home/sage/marc_ws/build/arm_config/CMakeFiles/arm_config_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/arm_config_uninstall.dir/depend
 

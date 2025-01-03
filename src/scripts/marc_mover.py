@@ -52,13 +52,20 @@ def main():
 
     # Create subscriber before starting the executor
     def click_callback(msg):
-        node.get_logger().info(f'Received click coordinates: x={msg.x}, y={msg.y}, z={msg.z}')
-        # Push coordinates to queue
-        coord_queue.put([msg.x, msg.y, msg.z])
-        # Update position parameter with new coordinates
-        node.set_parameters([
-            rclpy.Parameter('position', rclpy.Parameter.Type.DOUBLE_ARRAY, [msg.x, msg.y, msg.z])
-        ])
+        # Convert centimeters to meters and round to 2 decimal places
+        x_meters = round(msg.x / 100.0, 2)
+        y_meters = round(msg.y / 100.0, 2)
+        z_meters = round(msg.z / 100.0, 2)
+        
+        node.get_logger().info(
+            f'Received coordinates (cm): x={msg.x:.2f}, y={msg.y:.2f}, z={msg.z:.2f}'
+        )
+        node.get_logger().info(
+            f'Converted to meters: x={x_meters}, y={y_meters}, z={z_meters}'
+        )
+        
+        # Push coordinates to queue in meters (rounded)
+        coord_queue.put([x_meters, y_meters, z_meters])
         
     click_sub = node.create_subscription(
         Point,
@@ -109,56 +116,39 @@ def main():
     moveit2.cartesian_avoid_collisions = cartesian_avoid_collisions
     moveit2.cartesian_jump_threshold = cartesian_jump_threshold
 
-    while not coord_queue.empty():
-        # Get next position from queue
-        position = coord_queue.get()
-        
-        # Move to pose
-        node.get_logger().info(
-            f"Moving to {{position: {list(position)}, quat_xyzw: {list(quat_xyzw)}}}"
-        )
-        moveit2.move_to_pose(
-            position=position,
-            quat_xyzw=quat_xyzw,
-            cartesian=cartesian,
-            cartesian_max_step=cartesian_max_step,
-            cartesian_fraction_threshold=cartesian_fraction_threshold,
-        )
-        if synchronous:
-            # Note: the same functionality can be achieved by setting
-            # `synchronous:=false` and `cancel_after_secs` to a negative value.
-            moveit2.wait_until_executed()
-        else:
-            # Wait for the request to get accepted (i.e., for execution to start)
-            print("Current State: " + str(moveit2.query_state()))
-            rate = node.create_rate(10)
-            while moveit2.query_state() != MoveIt2State.EXECUTING:
-                rate.sleep()
+    # Main loop to continuously process coordinates
+    rate = node.create_rate(10)  # 10Hz refresh rate
+    try:
+        while rclpy.ok():
+            if not coord_queue.empty():
+                # Get next position from queue
+                position = coord_queue.get()
+                
+                # Move to pose
+                node.get_logger().info(
+                    f"Moving to position: {list(position)}, quat_xyzw: {list(quat_xyzw)}"
+                )
+                
+                result = moveit2.move_to_pose(
+                    position=position,
+                    quat_xyzw=quat_xyzw,
+                    cartesian=cartesian,
+                    cartesian_max_step=cartesian_max_step,
+                    cartesian_fraction_threshold=cartesian_fraction_threshold,
+                )
+                
+                # Wait for movement to complete and check result
+                if result:
+                    state = moveit2.wait_until_executed()
+            
+            rate.sleep()
 
-            # Get the future
-            print("Current State: " + str(moveit2.query_state()))
-            future = moveit2.get_execution_future()
-
-            # Cancel the goal
-            if cancel_after_secs > 0.0:
-                # Sleep for the specified time
-                sleep_time = node.create_rate(cancel_after_secs)
-                sleep_time.sleep()
-                # Cancel the goal
-                print("Cancelling goal")
-                moveit2.cancel_execution()
-
-            # Wait until the future is done
-            while not future.done():
-                rate.sleep()
-
-            # Print the result
-            print("Result status: " + str(future.result().status))
-            print("Result error code: " + str(future.result().result.error_code))
-
-    rclpy.shutdown()
-    executor_thread.join()
-    exit(0)
+    except KeyboardInterrupt:
+        node.get_logger().info('Shutting down...')
+    finally:
+        rclpy.shutdown()
+        executor_thread.join()
+        exit(0)
 
 
 if __name__ == "__main__":

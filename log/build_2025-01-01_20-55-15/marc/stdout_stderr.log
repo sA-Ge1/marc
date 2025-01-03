@@ -1,0 +1,47 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/sage/marc_ws/build/marc
+-- Install configuration: ""
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/urdf
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/urdf/marc.urdf
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/urdf/marc.csv
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/meshes
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/meshes/wrist_link.STL
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/meshes/upper_arm_link.STL
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/meshes/base_link.STL
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/meshes/elbow_link.STL
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/meshes/ee_link.STL
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/meshes/shoulder_link.STL
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/launch
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/launch/display.launch
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/launch/gazebo.launch
+-- Installing: /home/sage/marc_ws/install/marc/lib/marc/detector_click.py
+-- Installing: /home/sage/marc_ws/install/marc/share/ament_index/resource_index/package_run_dependencies/marc
+-- Installing: /home/sage/marc_ws/install/marc/share/ament_index/resource_index/parent_prefix_path/marc
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/environment/ament_prefix_path.sh
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/environment/ament_prefix_path.dsv
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/environment/path.sh
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/environment/path.dsv
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/local_setup.bash
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/local_setup.sh
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/local_setup.zsh
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/local_setup.dsv
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/package.dsv
+-- Installing: /home/sage/marc_ws/install/marc/share/ament_index/resource_index/packages/marc
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/cmake/marcConfig.cmake
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/cmake/marcConfig-version.cmake
+-- Installing: /home/sage/marc_ws/install/marc/share/marc/package.xml

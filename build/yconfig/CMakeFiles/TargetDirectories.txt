@@ -1,9 +1,0 @@
-/home/batman/marc/build/yconfig/CMakeFiles/uninstall.dir
-/home/batman/marc/build/yconfig/CMakeFiles/yconfig_uninstall.dir
-/home/batman/marc/build/yconfig/CMakeFiles/test.dir
-/home/batman/marc/build/yconfig/CMakeFiles/edit_cache.dir
-/home/batman/marc/build/yconfig/CMakeFiles/rebuild_cache.dir
-/home/batman/marc/build/yconfig/CMakeFiles/list_install_components.dir
-/home/batman/marc/build/yconfig/CMakeFiles/install.dir
-/home/batman/marc/build/yconfig/CMakeFiles/install/local.dir
-/home/batman/marc/build/yconfig/CMakeFiles/install/strip.dir
