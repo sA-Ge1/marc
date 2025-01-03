@@ -107,9 +107,9 @@ class Detector(Node):
         
         # Initialize ArUco dictionaries and parameters
         this_aruco_dictionary1 = cv2.aruco.getPredefinedDictionary(self.ARUCO_DICT[self.desired_aruco_dictionary1])
-        this_aruco_parameters1 = cv2.aruco.DetectorParameters()
+        this_aruco_parameters1 = cv2.aruco.DetectorParameters_create()
         this_aruco_dictionary2 = cv2.aruco.getPredefinedDictionary(self.ARUCO_DICT[self.desired_aruco_dictionary2])
-        this_aruco_parameters2 = cv2.aruco.DetectorParameters()
+        this_aruco_parameters2 = cv2.aruco.DetectorParameters_create()
 
         self.start_capture(1)
         square_points = self.current_square_points
