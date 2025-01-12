@@ -14,11 +14,11 @@ def main():
     # Define waypoints as a list of [position, orientation] pairs
     waypoints = [
        #quad
-        ([0.09, 0.05, 0.00], [0.0, 1.57, 0.0]),
-        ([0.14, 0.05 ,0.0], [0.0, 1.57, 0.0]),
-        ([0.14, -0.05, 0.0], [0.0, 1.57, 0.0]),
-        ([0.09, -0.05, 0.00], [0.0, 1.57, 0.0]),
-        ([0.09, 0.05, 0.00], [0.0, 1.57, 0.0])
+        ([0.09, 0.05, 0.00], [0.0, 1.57, 0.1]),
+        ([0.14, 0.05 ,0.0], [0.0, 1.57, 0.1]),
+        ([0.14, -0.05, 0.0], [0.0, 1.57, 0.1]),
+        ([0.09, -0.05, 0.00], [0.0, 1.57, 0.1]),
+        ([0.09, 0.05, 0.00], [0.0, 1.57, 0.1])
     ]
 
     # Convert euler angles to quaternions for each waypoint
@@ -31,7 +31,7 @@ def main():
     # Declare parameters
     node.declare_parameter("synchronous", True)
     node.declare_parameter("planner_id", "RRTConnectkConfigDefault")
-    node.declare_parameter("cartesian", True)
+    node.declare_parameter("cartesian", False)
     node.declare_parameter("cartesian_max_step", 0.0025)
     node.declare_parameter("cartesian_fraction_threshold", 0.0)
     node.declare_parameter("cartesian_jump_threshold", 0.0)
@@ -49,7 +49,7 @@ def main():
         group_name=robot.MOVE_GROUP_ARM,
         callback_group=callback_group,
     )
-
+    moveit2.wait_until_executed()
     # Get parameters
     synchronous = node.get_parameter("synchronous").get_parameter_value().bool_value
     cartesian = node.get_parameter("cartesian").get_parameter_value().bool_value

@@ -12,7 +12,7 @@ from queue import Queue
 def main():
     rclpy.init()
     node = Node("arm_pose_goal")
-    node.declare_parameter("position", [0.15, 0.0, 0.03])
+    node.declare_parameter("position", [0.10, 0.0, 0.03])
     # Specify the desired orientation in roll, pitch, yaw (in radians)
     roll, pitch, yaw = 0.00, 0.0, 0.0
     r = R.from_euler('xyz', [roll, pitch, yaw])
@@ -69,7 +69,7 @@ def main():
         
     click_sub = node.create_subscription(
         Point,
-        'click_coords',
+        'key_xyz',
         click_callback,
         10
     )

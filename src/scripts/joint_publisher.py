@@ -5,6 +5,7 @@ import serial
 import time
 import math
 from std_msgs.msg import Bool
+from geometry_msgs.msg import Point
 
 class ArmController(Node):
     def __init__(self):
@@ -29,7 +30,7 @@ class ArmController(Node):
         self.threshold = 0.5 # Degree change threshold
         
         # Add subscription for end effector state
-        self.end_effector_state = None
+        self.end_effector_state = False
         self.end_effector_sub = self.create_subscription(
             Bool,
             '/end_state',
@@ -44,8 +45,18 @@ class ArmController(Node):
             10
         )
         
+        self.key_pub= self.create_publisher(
+            Point,
+            '/key_xyz', 
+            10
+        )
+        
         # Initialize end effector state as False (closed)
-        self.end_effector_state = False
+        msg = Point()
+        msg.x = 0.0
+        msg.y = 0.0
+        msg.z = 0.0
+        self.key_pub.publish(msg)  # Corrected from self.key_pub()
         self.publish_end_state()
 
         # Create timer to periodically publish end effector state

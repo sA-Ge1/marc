@@ -1,6 +1,6 @@
 set(_AMENT_PACKAGE_NAME "arm_config")
 set(arm_config_VERSION "0.3.0")
-set(arm_config_MAINTAINER "adityakarumbaiah <adityakarumbaiah@gmail.com>")
+set(arm_config_MAINTAINER "ak <ak@gmail.com>")
 set(arm_config_BUILD_DEPENDS )
 set(arm_config_BUILDTOOL_DEPENDS "ament_cmake")
 set(arm_config_BUILD_EXPORT_DEPENDS )

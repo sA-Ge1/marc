@@ -8,7 +8,7 @@ from rclpy.node import Node
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 from ArucoDetection_definitions import *
-
+url = 'http://192.168.161.145:4747/video?640x480'
 class Detector(Node):
     def __init__(self):
         super().__init__('detector_node')
@@ -79,7 +79,7 @@ class Detector(Node):
             click_coordinates = {"x": fin_x, "y": fin_y}
             print(f"Mouse clicked at: {click_coordinates}")
 
-    def start_capture(self, camera_id=1):
+    def start_capture(self, camera_id=url):
         """Initialize video capture"""
         self.cap = cv2.VideoCapture(camera_id)
         #increase capture size
@@ -104,7 +104,7 @@ class Detector(Node):
         this_aruco_dictionary2 = cv2.aruco.getPredefinedDictionary(self.ARUCO_DICT[self.desired_aruco_dictionary2])
         this_aruco_parameters2 = cv2.aruco.DetectorParameters_create()
 
-        self.start_capture(1)
+        self.start_capture(url)
         square_points = self.current_square_points
         start_time = time.time()
         if 1:

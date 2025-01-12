@@ -1,139 +1,72 @@
-#!/usr/bin/env python3
-from threading import Thread
 import rclpy
-from rclpy.callback_groups import ReentrantCallbackGroup
 from rclpy.node import Node
+from rclpy.callback_groups import ReentrantCallbackGroup
 from pymoveit2 import MoveIt2, MoveIt2State
 from pymoveit2.robots import marc as robot
-from scipy.spatial.transform import Rotation as R
-#home 0.024,0.0,0.111 quat=0,0,0,1
-def main():
-    rclpy.init()
-    node = Node("arm_pose_goal")
-    node.declare_parameter("position", [0.15, 0.0, 0.03])
-    # Specify the desired orientation in roll, pitch, yaw (in radians)
-    roll, pitch, yaw = 0.00, 0.0, 0.0
-    r = R.from_euler('xyz', [roll, pitch, yaw])
-    quaternion = r.as_quat()  # Returns [x, y, z, w]
-    node.declare_parameter("quat_xyzw", quaternion.tolist())
-    node.declare_parameter("synchronous", True)
-    # If non-positive, don't cancel. Only used if synchronous is False
-    node.declare_parameter("cancel_after_secs", 0.0)
-    # Planner ID
-    node.declare_parameter("planner_id", "RRTConnectkConfigDefault")
-    # Declare parameters for cartesian planning
-    node.declare_parameter("cartesian", False)
-    node.declare_parameter("cartesian_max_step", 0.0025)
-    node.declare_parameter("cartesian_fraction_threshold", 0.0)
-    node.declare_parameter("cartesian_jump_threshold", 0.0)
-    node.declare_parameter("cartesian_avoid_collisions", False)
+from threading import Thread
 
-    # Create callback group that allows execution of callbacks in parallel without restrictions
-    callback_group = ReentrantCallbackGroup()
+class PoseGoalNode(Node):
+    def __init__(self):
+        super().__init__("pose_goal_node")
 
-    # Create MoveIt 2 interface
-    moveit2 = MoveIt2(
-        node=node,
-        joint_names=robot.joint_names(),
-        base_link_name=robot.base_link_name(),
-        end_effector_name=robot.end_effector_name(),
-        group_name=robot.MOVE_GROUP_ARM,
-        callback_group=callback_group,
-    )
+        # Declare parameters
+        self.declare_parameter("cartesian", False)
+        self.declare_parameter("cartesian_max_step", 0.0025)
+        self.declare_parameter("cartesian_fraction_threshold", 0.0)
+        self.declare_parameter("cartesian_jump_threshold", 0.0)
+        self.declare_parameter("cartesian_avoid_collisions", False)
+        self.declare_parameter("planner_id", "RRTConnectkConfigDefault")
 
-    moveit2.planner_id = (
-        node.get_parameter("planner_id").get_parameter_value().string_value
-    )
+        # Create callback group
+        callback_group = ReentrantCallbackGroup()
 
-    # Spin the node in background thread(s) and wait a bit for initialization
-    executor = rclpy.executors.MultiThreadedExecutor(2)
-    executor.add_node(node)
-    executor_thread = Thread(target=executor.spin, daemon=True, args=())
-    executor_thread.start()
-    node.create_rate(1.0).sleep()
+        # Create MoveIt2 interface
+        self.moveit2 = MoveIt2(
+            node=self,
+            joint_names=robot.joint_names(),
+            base_link_name=robot.base_link_name(),
+            end_effector_name=robot.end_effector_name(),
+            group_name=robot.MOVE_GROUP_ARM,
+            callback_group=callback_group,
+        )
+        self.moveit2.planner_id = self.get_parameter("planner_id").value
+        self.moveit2.max_velocity = 0.5
+        self.moveit2.max_acceleration = 0.5
 
-    # Scale down velocity and acceleration of joints (percentage of maximum)
-    moveit2.max_velocity = 1.0
-    moveit2.max_acceleration = 1.0
 
-    # Get parameters
-    position = node.get_parameter("position").get_parameter_value().double_array_value
-    quat_xyzw = node.get_parameter("quat_xyzw").get_parameter_value().double_array_value
-    synchronous = node.get_parameter("synchronous").get_parameter_value().bool_value
-    cancel_after_secs = (
-        node.get_parameter("cancel_after_secs").get_parameter_value().double_value
-    )
-    cartesian = node.get_parameter("cartesian").get_parameter_value().bool_value
-    cartesian_max_step = (
-        node.get_parameter("cartesian_max_step").get_parameter_value().double_value
-    )
-    cartesian_fraction_threshold = (
-        node.get_parameter("cartesian_fraction_threshold")
-        .get_parameter_value()
-        .double_value
-    )
-    cartesian_jump_threshold = (
-        node.get_parameter("cartesian_jump_threshold")
-        .get_parameter_value()
-        .double_value
-    )
-    cartesian_avoid_collisions = (
-        node.get_parameter("cartesian_avoid_collisions")
-        .get_parameter_value()
-        .bool_value
-    )
 
-    # Set parameters for cartesian planning
-    moveit2.cartesian_avoid_collisions = cartesian_avoid_collisions
-    moveit2.cartesian_jump_threshold = cartesian_jump_threshold
+    def move_to_pose(self, x, y, z, qx, qy, qz, qw, cartesian=False):
+        # Set parameters for cartesian planning
+        self.moveit2.cartesian_avoid_collisions = self.get_parameter("cartesian_avoid_collisions").value
+        self.moveit2.cartesian_jump_threshold = self.get_parameter("cartesian_jump_threshold").value
 
-    # Move to pose
-    node.get_logger().info(
-        f"Moving to {{position: {list(position)}, quat_xyzw: {list(quat_xyzw)}}}"
-    )
-    moveit2.move_to_pose(
-        position=position,
-        quat_xyzw=quat_xyzw,
-        cartesian=cartesian,
-        cartesian_max_step=cartesian_max_step,
-        cartesian_fraction_threshold=cartesian_fraction_threshold,
-    )
-    if synchronous:
-        # Note: the same functionality can be achieved by setting
-        # `synchronous:=false` and `cancel_after_secs` to a negative value.
-        moveit2.wait_until_executed()
-    else:
-        # Wait for the request to get accepted (i.e., for execution to start)
-        print("Current State: " + str(moveit2.query_state()))
-        rate = node.create_rate(10)
-        while moveit2.query_state() != MoveIt2State.EXECUTING:
-            rate.sleep()
+        # Log the target pose
+        self.get_logger().info(f"Moving to pose: position=({x}, {y}, {z}), quaternion=({qx}, {qy}, {qz}, {qw})")
 
-        # Get the future
-        print("Current State: " + str(moveit2.query_state()))
-        future = moveit2.get_execution_future()
+        # Move to pose
+        self.moveit2.move_to_pose(
+            position=[x, y, z],
+            quat_xyzw=[qx, qy, qz, qw],
+            cartesian=cartesian,
+            cartesian_max_step=self.get_parameter("cartesian_max_step").value,
+            cartesian_fraction_threshold=self.get_parameter("cartesian_fraction_threshold").value,
+        )
+        self.moveit2.wait_until_executed()
 
-        # Cancel the goal
-        if cancel_after_secs > 0.0:
-            # Sleep for the specified time
-            sleep_time = node.create_rate(cancel_after_secs)
-            sleep_time.sleep()
-            # Cancel the goal
-            print("Cancelling goal")
-            moveit2.cancel_execution()
-
-        # Wait until the future is done
-        while not future.done():
-            rate.sleep()
-
-        # Print the result
-        print("Result status: " + str(future.result().status))
-        print("Result error code: " + str(future.result().result.error_code))
-
-    rclpy.shutdown()
-    executor_thread.join()
-    exit(0)
-
+    def shutdown(self):
+        """Shuts down the ROS 2 node and stops the executor."""
+        self.executor.shutdown()
+        self.executor_thread.join()
+        self.destroy_node()
 
 if __name__ == "__main__":
-    main()
+    rclpy.init()
+    pose_goal_node = PoseGoalNode()
+    try:
+        # Example: Move to a specific pose
+        pose_goal_node.move_to_pose(0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 1.0, cartesian=False)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        pose_goal_node.shutdown()
+        rclpy.shutdown()

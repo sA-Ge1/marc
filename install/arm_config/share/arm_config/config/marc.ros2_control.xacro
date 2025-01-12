@@ -38,10 +38,10 @@
                   <param name="initial_value">${initial_positions['ee_rotation_joint_x']}</param>
                 </state_interface>
             </joint>
-            <joint name="ee_rotation_joint_y">
+            <joint name="ee_rotation_joint_z">
                 <command_interface name="position"/>
                 <state_interface name="position">
-                  <param name="initial_value">${initial_positions['ee_rotation_joint_y']}</param>
+                  <param name="initial_value">${initial_positions['ee_rotation_joint_z']}</param>
                 </state_interface>
             </joint>
 

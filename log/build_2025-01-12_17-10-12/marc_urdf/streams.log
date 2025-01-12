@@ -1,0 +1,33 @@
+[0.011s] Invoking command in '/home/sage/marc_ws/build/marc_urdf': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sage/microros_ws/install/sensor_msgs_py:/home/sage/ros/install/my_robo:/home/sage/ros/install/cartographer_launch:/home/sage/ros/install/assign:/opt/ros/humble /usr/bin/cmake --build /home/sage/marc_ws/build/marc_urdf -- -j16 -l16
+[0.045s] Invoked command in '/home/sage/marc_ws/build/marc_urdf' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sage/microros_ws/install/sensor_msgs_py:/home/sage/ros/install/my_robo:/home/sage/ros/install/cartographer_launch:/home/sage/ros/install/assign:/opt/ros/humble /usr/bin/cmake --build /home/sage/marc_ws/build/marc_urdf -- -j16 -l16
+[0.080s] Invoking command in '/home/sage/marc_ws/build/marc_urdf': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sage/microros_ws/install/sensor_msgs_py:/home/sage/ros/install/my_robo:/home/sage/ros/install/cartographer_launch:/home/sage/ros/install/assign:/opt/ros/humble /usr/bin/cmake --install /home/sage/marc_ws/build/marc_urdf
+[0.088s] -- Install configuration: ""
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/urdf
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/urdf/marc_urdf.urdf
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/urdf/marc_urdf.csv
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/meshes
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/meshes/wrist_link.STL
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/meshes/upper_arm_link.STL
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/meshes/base_link.STL
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/meshes/elbow_link.STL
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/meshes/ee_link.STL
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/meshes/shoulder_link.STL
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/launch
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/launch/display.launch
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/launch/gazebo.launch
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/ament_index/resource_index/package_run_dependencies/marc_urdf
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/ament_index/resource_index/parent_prefix_path/marc_urdf
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/environment/ament_prefix_path.sh
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/environment/ament_prefix_path.dsv
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/environment/path.sh
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/environment/path.dsv
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/local_setup.bash
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/local_setup.sh
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/local_setup.zsh
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/local_setup.dsv
+[0.088s] -- Installing: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/package.dsv
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/ament_index/resource_index/packages/marc_urdf
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/cmake/marc_urdfConfig.cmake
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/cmake/marc_urdfConfig-version.cmake
+[0.088s] -- Up-to-date: /home/sage/marc_ws/install/marc_urdf/share/marc_urdf/package.xml
+[0.095s] Invoked command in '/home/sage/marc_ws/build/marc_urdf' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sage/microros_ws/install/sensor_msgs_py:/home/sage/ros/install/my_robo:/home/sage/ros/install/cartographer_launch:/home/sage/ros/install/assign:/opt/ros/humble /usr/bin/cmake --install /home/sage/marc_ws/build/marc_urdf

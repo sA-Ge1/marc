@@ -13,7 +13,7 @@ from rclpy.callback_groups import ReentrantCallbackGroup
 from rclpy.node import Node
 
 from pymoveit2 import MoveIt2, MoveIt2State
-from pymoveit2.robots import panda as robot
+from pymoveit2.robots import marc as robot
 
 
 def main():
@@ -23,13 +23,13 @@ def main():
     node = Node("ex_pose_goal")
 
     # Declare parameters for position and orientation
-    node.declare_parameter("position", [0.5, 0.0, 0.25])
-    node.declare_parameter("quat_xyzw", [1.0, 0.0, 0.0, 0.0])
+    node.declare_parameter("position", [0.1, 0.0, 0.0])
+    node.declare_parameter("quat_xyzw", [0.0, 0.0, 0.0, 1.0])
     node.declare_parameter("synchronous", True)
     # If non-positive, don't cancel. Only used if synchronous is False
     node.declare_parameter("cancel_after_secs", 0.0)
     # Planner ID
-    node.declare_parameter("planner_id", "RRTConnectkConfigDefault")
+    node.declare_parameter("planner_id", "RRTConfigDefault")
     # Declare parameters for cartesian planning
     node.declare_parameter("cartesian", False)
     node.declare_parameter("cartesian_max_step", 0.0025)

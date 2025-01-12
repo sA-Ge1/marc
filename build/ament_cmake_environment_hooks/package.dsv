@@ -1,0 +1,4 @@
+source;share/marc/local_setup.bash
+source;share/marc/local_setup.dsv
+source;share/marc/local_setup.sh
+source;share/marc/local_setup.zsh

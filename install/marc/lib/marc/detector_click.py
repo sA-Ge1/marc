@@ -9,6 +9,7 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Point
 
+url ='http://192.168.161.94:4747/video?640x480'
 class Detector(Node):
     def __init__(self):
         # Initialize the ROS2 node first
@@ -82,12 +83,12 @@ class Detector(Node):
             
             # Publish the coordinates
             point_msg = Point()
-            point_msg.x = float(fin_x)
-            point_msg.y = float(fin_y)
+            point_msg.x = float(fin_y)
+            point_msg.y = float(-fin_x)
             point_msg.z = 0.0
             self.click_pub.publish(point_msg)
 
-    def start_capture(self, camera_id=1):
+    def start_capture(self, camera_id=url):
         """Initialize video capture"""
         self.cap = cv2.VideoCapture(camera_id)
         cv2.namedWindow("img_wrapped")
@@ -111,7 +112,7 @@ class Detector(Node):
         this_aruco_dictionary2 = cv2.aruco.getPredefinedDictionary(self.ARUCO_DICT[self.desired_aruco_dictionary2])
         this_aruco_parameters2 = cv2.aruco.DetectorParameters()
 
-        self.start_capture(1)
+        self.start_capture(url)
         square_points = self.current_square_points
         start_time = time.time()
 
@@ -124,11 +125,16 @@ class Detector(Node):
                 frame_clean = frame.copy()
                 left_corners, corner_ids = getMarkerCoordinates(markers, ids, 0)
 
-                # Update marker positions
+                # Update marker positions with safety checks
                 if self.marker_location_hold and corner_ids is not None:
                     for i, id_ in enumerate(corner_ids):
-                        if id_ <= 4:
-                            self.current_square_points[id_-1] = left_corners[i]
+                        # Ensure ID is within valid range (1-4)
+                        if 1 <= id_ <= 4:
+                            try:
+                                self.current_square_points[id_-1] = left_corners[i]
+                            except IndexError:
+                                print(f"Warning: Invalid index for marker ID {id_}")
+                                continue
                     left_corners = self.current_square_points
                     corner_ids = [1, 2, 3, 4]
 

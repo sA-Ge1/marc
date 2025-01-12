@@ -16,6 +16,6 @@ moveit_simple_controller_manager:
       - elbow_joint
       - wrist_joint
       - ee_rotation_joint_x
-      - ee_rotation_joint_y
+      - ee_rotation_joint_z
     action_ns: follow_joint_trajectory
     default: true

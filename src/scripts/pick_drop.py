@@ -13,10 +13,10 @@ def main():
     node = Node("pick_drop_sequence")
 
     # Define pick and drop positions with orientations
-    pick_position = [0.10, 0.0, -0.007]  # Adjust these coordinates
+    pick_position = [0.12, 0.09, -0.007]  # Adjust these coordinates
     pick_orientation = [0.0, 0.0, 0.0]    # [roll, pitch, yaw] in radians
     
-    drop_position = [0.09, 0.14, 0.13]     # Adjust these coordinates
+    drop_position = [0.05, 0.15, 0.13]     # Adjust these coordinates
     drop_orientation = [0.0, 0.0, 0.0]    # [roll, pitch, yaw] in radians
 
     # Convert orientations to quaternions
@@ -72,7 +72,7 @@ def main():
         moveit2.move_to_pose(
             position=pick_position,
             quat_xyzw=pick_quat,
-            cartesian=True,
+            cartesian=False,
             cartesian_max_step=0.0025,
         )
         moveit2.wait_until_executed()
@@ -83,16 +83,13 @@ def main():
         end_effector_pub.publish(ee_msg)
         node.create_rate(0.5).sleep()  # Wait for end effector to close
 
-        # 4. Wait for 2 seconds
-        node.get_logger().info("Waiting for 2 seconds")
-        node.create_rate(0.5).sleep()  # 2 second delay
 
         # 5. Move to drop position
         node.get_logger().info("Moving to drop position")
         moveit2.move_to_pose(
             position=drop_position,
             quat_xyzw=drop_quat,
-            cartesian=True,
+            cartesian=False,
             cartesian_max_step=0.0025,
         )
         moveit2.wait_until_executed()

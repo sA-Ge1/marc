@@ -1,0 +1,99 @@
+[0.010s] Invoking command in '/home/sage/marc_ws/build/pymoveit2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sage/microros_ws/install/sensor_msgs_py:/home/sage/ros/install/my_robo:/home/sage/ros/install/cartographer_launch:/home/sage/ros/install/assign:/opt/ros/humble /usr/bin/cmake /home/sage/marc_ws/src/pymoveit2 -DCMAKE_INSTALL_PREFIX=/home/sage/marc_ws/install/pymoveit2
+[0.062s] -- The C compiler identification is GNU 11.4.0
+[0.106s] -- The CXX compiler identification is GNU 11.4.0
+[0.112s] -- Detecting C compiler ABI info
+[0.169s] -- Detecting C compiler ABI info - done
+[0.175s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.175s] -- Detecting C compile features
+[0.175s] -- Detecting C compile features - done
+[0.177s] -- Detecting CXX compiler ABI info
+[0.242s] -- Detecting CXX compiler ABI info - done
+[0.247s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.248s] -- Detecting CXX compile features
+[0.248s] -- Detecting CXX compile features - done
+[0.251s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.536s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.747s] -- Configuring done
+[0.748s] -- Generating done
+[0.749s] -- Build files have been written to: /home/sage/marc_ws/build/pymoveit2
+[0.751s] Invoked command in '/home/sage/marc_ws/build/pymoveit2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sage/microros_ws/install/sensor_msgs_py:/home/sage/ros/install/my_robo:/home/sage/ros/install/cartographer_launch:/home/sage/ros/install/assign:/opt/ros/humble /usr/bin/cmake /home/sage/marc_ws/src/pymoveit2 -DCMAKE_INSTALL_PREFIX=/home/sage/marc_ws/install/pymoveit2
+[0.752s] Invoking command in '/home/sage/marc_ws/build/pymoveit2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sage/microros_ws/install/sensor_msgs_py:/home/sage/ros/install/my_robo:/home/sage/ros/install/cartographer_launch:/home/sage/ros/install/assign:/opt/ros/humble /usr/bin/cmake --build /home/sage/marc_ws/build/pymoveit2 -- -j16 -l16
+[0.808s] Built target ament_cmake_python_copy_pymoveit2
+[0.956s] running egg_info
+[0.957s] creating pymoveit2.egg-info
+[0.966s] writing pymoveit2.egg-info/PKG-INFO
+[0.966s] writing dependency_links to pymoveit2.egg-info/dependency_links.txt
+[0.966s] writing top-level names to pymoveit2.egg-info/top_level.txt
+[0.966s] writing manifest file 'pymoveit2.egg-info/SOURCES.txt'
+[0.995s] reading manifest file 'pymoveit2.egg-info/SOURCES.txt'
+[0.996s] writing manifest file 'pymoveit2.egg-info/SOURCES.txt'
+[1.016s] Built target ament_cmake_python_build_pymoveit2_egg
+[1.026s] Invoked command in '/home/sage/marc_ws/build/pymoveit2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sage/microros_ws/install/sensor_msgs_py:/home/sage/ros/install/my_robo:/home/sage/ros/install/cartographer_launch:/home/sage/ros/install/assign:/opt/ros/humble /usr/bin/cmake --build /home/sage/marc_ws/build/pymoveit2 -- -j16 -l16
+[1.057s] Invoking command in '/home/sage/marc_ws/build/pymoveit2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sage/microros_ws/install/sensor_msgs_py:/home/sage/ros/install/my_robo:/home/sage/ros/install/cartographer_launch:/home/sage/ros/install/assign:/opt/ros/humble /usr/bin/cmake --install /home/sage/marc_ws/build/pymoveit2
+[1.063s] -- Install configuration: ""
+[1.063s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/pymoveit2/environment/pythonpath.sh
+[1.063s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/pymoveit2/environment/pythonpath.dsv
+[1.063s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2-4.0.0-py3.10.egg-info
+[1.063s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2-4.0.0-py3.10.egg-info/dependency_links.txt
+[1.063s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2-4.0.0-py3.10.egg-info/PKG-INFO
+[1.063s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2-4.0.0-py3.10.egg-info/SOURCES.txt
+[1.063s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2-4.0.0-py3.10.egg-info/top_level.txt
+[1.063s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2
+[1.063s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/moveit2_gripper.py
+[1.063s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/moveit2_servo.py
+[1.064s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/moveit2.py
+[1.064s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/gripper_command.py
+[1.064s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots
+[1.064s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/crane_x7.py
+[1.064s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/ur.py
+[1.064s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/phantomx_pincher.py
+[1.064s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/kinova.py
+[1.064s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/__init__.py
+[1.064s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/marc.py
+[1.064s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/panda.py
+[1.064s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/lbr.py
+[1.064s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/gripper_interface.py
+[1.064s] -- Installing: /home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/__init__.py
+[1.103s] Listing '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2'...
+[1.104s] Compiling '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/__init__.py'...
+[1.104s] Compiling '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/gripper_command.py'...
+[1.104s] Compiling '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/gripper_interface.py'...
+[1.104s] Compiling '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/moveit2.py'...
+[1.104s] Compiling '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/moveit2_gripper.py'...
+[1.104s] Compiling '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/moveit2_servo.py'...
+[1.104s] Listing '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots'...
+[1.104s] Compiling '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/__init__.py'...
+[1.104s] Compiling '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/crane_x7.py'...
+[1.104s] Compiling '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/kinova.py'...
+[1.104s] Compiling '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/lbr.py'...
+[1.104s] Compiling '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/marc.py'...
+[1.104s] Compiling '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/panda.py'...
+[1.104s] Compiling '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/phantomx_pincher.py'...
+[1.104s] Compiling '/home/sage/marc_ws/install/pymoveit2/local/lib/python3.10/dist-packages/pymoveit2/robots/ur.py'...
+[1.106s] -- Installing: /home/sage/marc_ws/install/pymoveit2/lib/pymoveit2/ex_allow_collisions.py
+[1.107s] -- Installing: /home/sage/marc_ws/install/pymoveit2/lib/pymoveit2/ex_clear_planning_scene.py
+[1.107s] -- Installing: /home/sage/marc_ws/install/pymoveit2/lib/pymoveit2/ex_collision_mesh.py
+[1.107s] -- Installing: /home/sage/marc_ws/install/pymoveit2/lib/pymoveit2/ex_collision_primitive.py
+[1.107s] -- Installing: /home/sage/marc_ws/install/pymoveit2/lib/pymoveit2/ex_fk.py
+[1.107s] -- Installing: /home/sage/marc_ws/install/pymoveit2/lib/pymoveit2/ex_gripper.py
+[1.107s] -- Installing: /home/sage/marc_ws/install/pymoveit2/lib/pymoveit2/ex_ik.py
+[1.107s] -- Installing: /home/sage/marc_ws/install/pymoveit2/lib/pymoveit2/ex_joint_goal.py
+[1.107s] -- Installing: /home/sage/marc_ws/install/pymoveit2/lib/pymoveit2/ex_orientation_path_constraint.py
+[1.107s] -- Installing: /home/sage/marc_ws/install/pymoveit2/lib/pymoveit2/ex_pose_goal.py
+[1.107s] -- Installing: /home/sage/marc_ws/install/pymoveit2/lib/pymoveit2/ex_servo.py
+[1.107s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/ament_index/resource_index/package_run_dependencies/pymoveit2
+[1.108s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/ament_index/resource_index/parent_prefix_path/pymoveit2
+[1.108s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/pymoveit2/environment/ament_prefix_path.sh
+[1.108s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/pymoveit2/environment/ament_prefix_path.dsv
+[1.108s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/pymoveit2/environment/path.sh
+[1.108s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/pymoveit2/environment/path.dsv
+[1.108s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/pymoveit2/local_setup.bash
+[1.108s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/pymoveit2/local_setup.sh
+[1.108s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/pymoveit2/local_setup.zsh
+[1.108s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/pymoveit2/local_setup.dsv
+[1.108s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/pymoveit2/package.dsv
+[1.108s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/ament_index/resource_index/packages/pymoveit2
+[1.108s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/pymoveit2/cmake/pymoveit2Config.cmake
+[1.108s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/pymoveit2/cmake/pymoveit2Config-version.cmake
+[1.108s] -- Installing: /home/sage/marc_ws/install/pymoveit2/share/pymoveit2/package.xml
+[1.109s] Invoked command in '/home/sage/marc_ws/build/pymoveit2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sage/microros_ws/install/sensor_msgs_py:/home/sage/ros/install/my_robo:/home/sage/ros/install/cartographer_launch:/home/sage/ros/install/assign:/opt/ros/humble /usr/bin/cmake --install /home/sage/marc_ws/build/pymoveit2

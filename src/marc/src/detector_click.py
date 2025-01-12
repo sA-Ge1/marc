@@ -9,6 +9,7 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Point
 
+url ='http://192.168.161.94:4747/video?640x480'
 class Detector(Node):
     def __init__(self):
         # Initialize the ROS2 node first
@@ -83,11 +84,11 @@ class Detector(Node):
             # Publish the coordinates
             point_msg = Point()
             point_msg.x = float(fin_y)
-            point_msg.y = float(fin_x)
+            point_msg.y = float(-fin_x)
             point_msg.z = 0.0
             self.click_pub.publish(point_msg)
 
-    def start_capture(self, camera_id=2):
+    def start_capture(self, camera_id=url):
         """Initialize video capture"""
         self.cap = cv2.VideoCapture(camera_id)
         cv2.namedWindow("img_wrapped")
@@ -111,7 +112,7 @@ class Detector(Node):
         this_aruco_dictionary2 = cv2.aruco.getPredefinedDictionary(self.ARUCO_DICT[self.desired_aruco_dictionary2])
         this_aruco_parameters2 = cv2.aruco.DetectorParameters()
 
-        self.start_capture(2)
+        self.start_capture(url)
         square_points = self.current_square_points
         start_time = time.time()
 
